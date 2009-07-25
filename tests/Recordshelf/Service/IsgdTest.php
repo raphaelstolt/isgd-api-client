@@ -34,7 +34,7 @@ class IsgdTest extends PHPUnit_Framework_TestCase
      * @test
      * @expectedException Zend_ShortUrl_Service_Exception
      */
-    public function shouldExceptionWhenShortenedUrlOfAnotherServiceIsGiven()
+    public function shouldThrowExceptionWhenShortenedUrlOfAnotherServiceIsGiven()
     {
         $this->_service->unshorten('http://rubyurl.com/LM84');  
     }
