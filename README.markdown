@@ -4,12 +4,12 @@ The **isgd-api-client** is a the TDD way developed client to the [is.gd](http://
 
 Requirements
 ------------
-* An installed version of the Zend Framework with the installed/patched in ShortUrl component.
+* An installed version of the Zend Framework with the installed/patched in Zend_ShortUrl component which currently drowses in the [incubator](http://framework.zend.com/svn/framework/standard/incubator/library/Zend/ShortUrl/).
 
 Examples
 ------------
-The following examples show the two edge cases for using the is.gd API programmaticly with the **isgd-api-client**.
-#### Usage Example 1:
+The following example shows the two edge cases for using the is.gd API programmaticly with the **isgd-api-client**.
+#### Usage Example:
     
     <?php
     require_once 'Recordshelf/Service/Isgd.php';
