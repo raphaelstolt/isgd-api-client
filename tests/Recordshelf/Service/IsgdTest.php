@@ -27,7 +27,7 @@ class IsgdTest extends PHPUnit_Framework_TestCase
      */
     public function shouldShortenAGivenUrl()
     {
-        $this->assertEquals('http://is.gd/1NOQ8', 
+        $this->assertEquals($this->_service->shorten('http://zendframework.com'), 
             $this->_service->shorten('http://zendframework.com'));
     }
     /**
