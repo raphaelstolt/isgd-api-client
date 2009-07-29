@@ -4,7 +4,7 @@ require_once 'Zend/ShortUrl/Service/Abstract.php';
 class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
 {
     /**
-     * Base URI shortening service
+     * Base URI of the shortening service
      *
      * @var string
      */
