@@ -33,7 +33,7 @@ class IsgdTest extends PHPUnit_Framework_TestCase
             'adapter' => $adapter
         ));
         $adapter->setResponse(
-            "HTTP/1.1 200 OK"        . "\r\n" .
+            "HTTP/1.1 200 OK" . "\r\n" .
             "Content-type: text/html" . "\r\n" .
                                        "\r\n" .
             'http://is.gd/1T35Q');
@@ -60,7 +60,7 @@ class IsgdTest extends PHPUnit_Framework_TestCase
         ));
         $adapter->setConfig(array('strictredirects' => true));
         $adapter->setResponse(
-            "HTTP/1.1 302 Found"        . "\r\n" .
+            "HTTP/1.1 302 Found" . "\r\n" .
             "Location: http://zendframework.com" . "\r\n");
         $this->_service = new Recordshelf_Service_Isgd($client);
         $this->assertEquals('http://zendframework.com', 

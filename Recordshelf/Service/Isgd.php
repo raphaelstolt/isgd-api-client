@@ -19,7 +19,6 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
     public function __construct(Zend_Http_Client $client = null)
     {
         if (!is_null($client)) {
-            $this->getHttpClient()->resetParameters();
             $this->setHttpClient($client);
         }
     }
