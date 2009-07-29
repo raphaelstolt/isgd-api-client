@@ -58,7 +58,6 @@ class IsgdTest extends PHPUnit_Framework_TestCase
         $client = new Zend_Http_Client('http://is.gd/1T35Q', array(
             'adapter' => $adapter
         ));
-        $adapter->setConfig(array('strictredirects' => true));
         $adapter->setResponse(
             "HTTP/1.1 302 Found" . "\r\n" .
             "Location: http://zendframework.com" . "\r\n");
