@@ -50,7 +50,7 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
     { 
         $this->_validateUri($shortenedUrl);
         $this->_verifyBaseUri($shortenedUrl);
-        if (stripos($this->getHttpClient()->getUri(true), $this->_baseUri)) {
+        if ($this->getHttpClient()->getUri(true) === 'http://is.gd:80/api.php') {
             $this->setHttpClient(new Zend_Http_Client($shortenedUrl));
         }
         $this->getHttpClient()->setConfig(array('strictredirects' => true));
