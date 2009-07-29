@@ -3,7 +3,7 @@ require_once 'PHPUnit/Framework.php';
 require_once 'Recordshelf/Service/Isgd.php';
 require_once 'Zend/Http/Client/Adapter/Test.php';
 
-class IsgdTest extends PHPUnit_Framework_TestCase
+class Recordshelf_Service_IsgdTest extends PHPUnit_Framework_TestCase
 {
     protected $_service = null;
 
