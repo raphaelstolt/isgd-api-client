@@ -8,7 +8,20 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
      *
      * @var string
      */
-	protected $_baseUri = 'http://is.gd';
+    protected $_baseUri = 'http://is.gd';
+    /**
+     * Constructor allowing to inject a new client and adapter
+     *
+     * @param Zend_Http_Client $client Zend_Http_Client with possible attached
+     * adapter
+     */
+    public function __construct(Zend_Http_Client $client = null)
+    {
+        if (!is_null($client)) {
+            $this->getHttpClient()->resetParameters();
+            $this->setHttpClient($client);
+        }
+    }
     /**
      * Shortens long URL
      *
@@ -33,10 +46,12 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
      * @return string
      */
     public function unshorten($shortenedUrl)
-    {
+    { 
         $this->_validateUri($shortenedUrl);
         $this->_verifyBaseUri($shortenedUrl);
-        $this->setHttpClient(new Zend_Http_Client($shortenedUrl));
+        if (stripos($this->getHttpClient()->getUri(true), $this->_baseUri)) {
+            $this->setHttpClient(new Zend_Http_Client($shortenedUrl));
+        }
         $this->getHttpClient()->setConfig(array('strictredirects' => true));
         $response = $this->getHttpClient()->request();
         return str_replace(':' . $this->getHttpClient()->getUri()->getPort(), '', 
