@@ -15,5 +15,5 @@ The following example shows the two edge cases for using the is.gd API programma
     require_once 'Recordshelf/Service/Isgd.php';
     
     $service = new Recordshelf_Service_Isgd();
-    $service->shorten('http://zendframework.com'); // http://is.gd/1NOQ8
-    $service->unshorten('http://is.gd/1NOQ8'); // http://zendframework.com 
+    $service->shorten('http://zendframework.com'); // http://is.gd/1T35Q
+    $service->unshorten('http://is.gd/1T35Q'); // http://zendframework.com 
