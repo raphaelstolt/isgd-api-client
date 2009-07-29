@@ -4,11 +4,12 @@ require_once 'Zend/ShortUrl/Service/Abstract.php';
 class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
 {
     /**
-     * Base URI shortening service
+     * Base URI of the shortening service
      *
      * @var string
      */
     protected $_baseUri = 'http://is.gd';
+
     /**
      * Constructor allowing to inject a new client and adapter
      *
@@ -22,6 +23,7 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
             $this->setHttpClient($client);
         }
     }
+
     /**
      * Shortens long URL
      *
