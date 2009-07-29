@@ -8,7 +8,7 @@ class Recordshelf_Service_Isgd extends Zend_ShortUrl_Service_Abstract
      *
      * @var string
      */
-	protected $_baseUri = 'http://is.gd';
+    protected $_baseUri = 'http://is.gd';
     /**
      * Shortens long URL
      *
