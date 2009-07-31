@@ -61,7 +61,7 @@ class Recordshelf_Service_IsgdTest extends PHPUnit_Framework_TestCase
         $adapter->setResponse(
             "HTTP/1.1 302 Found" . "\r\n" .
             "Location: http://zendframework.com" . "\r\n");
-        $this->_service = new Recordshelf_Service_Isgd($client);
+        $this->_service = new Recordshelf_Service_Isgd($client); 
         $this->assertEquals('http://zendframework.com',
             $this->_service->unshorten('http://is.gd/1T35Q'));
     }
