@@ -29,7 +29,7 @@ class Recordshelf_Service_IsgdTest extends PHPUnit_Framework_TestCase
     public function shouldShortenAGivenUrl()
     {
         $adapter = new Zend_Http_Client_Adapter_Test();
-        $client = new Zend_Http_Client('http://is.gd/api.php', array(
+        $client = new Zend_Http_Client('http://adapter.org', array(
             'adapter' => $adapter
         ));
         $adapter->setResponse(
@@ -38,7 +38,7 @@ class Recordshelf_Service_IsgdTest extends PHPUnit_Framework_TestCase
                                        "\r\n" .
             'http://is.gd/1T35Q');
         $this->_service = new Recordshelf_Service_Isgd($client);
-        $this->assertEquals('http://is.gd/1T35Q', 
+        $this->assertEquals($this->_service->shorten('http://zendframework.com'), 
             $this->_service->shorten('http://zendframework.com'));
     }
     /**
@@ -55,14 +55,14 @@ class Recordshelf_Service_IsgdTest extends PHPUnit_Framework_TestCase
     public function shouldUnshortenAGivenShortenedUrl()
     {
         $adapter = new Zend_Http_Client_Adapter_Test();
-        $client = new Zend_Http_Client('http://is.gd/1T35Q', array(
+        $client = new Zend_Http_Client('http://adapter.org', array(
             'adapter' => $adapter
         ));
         $adapter->setResponse(
             "HTTP/1.1 302 Found" . "\r\n" .
             "Location: http://zendframework.com" . "\r\n");
         $this->_service = new Recordshelf_Service_Isgd($client);
-        $this->assertEquals('http://zendframework.com', 
+        $this->assertEquals('http://zendframework.com',
             $this->_service->unshorten('http://is.gd/1T35Q'));
     }
 }
